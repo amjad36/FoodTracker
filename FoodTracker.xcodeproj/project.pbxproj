@@ -100,8 +100,8 @@
 			isa = PBXGroup;
 			children = (
 				29B1CA201FB3501B00D95C67 /* AppDelegate.swift */,
-				29B1CA4E1FB5920200D95C67 /* RatingControl.swift */,
 				29B1CA221FB3501B00D95C67 /* ViewController.swift */,
+				29B1CA4E1FB5920200D95C67 /* RatingControl.swift */,
 				29B1CA241FB3501B00D95C67 /* Main.storyboard */,
 				29B1CA271FB3501B00D95C67 /* Assets.xcassets */,
 				29B1CA291FB3501B00D95C67 /* LaunchScreen.storyboard */,
@@ -431,7 +431,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6L3T8BHYTU;
 				INFOPLIST_FILE = FoodTracker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hcl.FoodTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -445,7 +447,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6L3T8BHYTU;
 				INFOPLIST_FILE = FoodTracker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hcl.FoodTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
