@@ -10,7 +10,7 @@ import UIKit
 
 @IBDesignable class RatingControl: UIStackView {
 
-    //MARK: Properties
+    // MARK: Properties
     @IBInspectable var starSize: CGSize = CGSize(width: 44.0, height: 44.0) {
         didSet {
             setupButtons()
@@ -40,7 +40,7 @@ import UIKit
         setupButtons()
     }
     
-    //MARK: Private Methods
+    // MARK: Private Methods
     
     private func setupButtons() {
         
@@ -78,7 +78,7 @@ import UIKit
         }
     }
     
-    //MARK: Button Action
+    // MARK: Button Action
     
     @objc func ratingButtonTapped(button: UIButton) {
         
