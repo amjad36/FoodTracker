@@ -96,7 +96,7 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         if self.isBeingPresented {
             self.dismiss(animated: true, completion: nil)
         }
-        else if _ = navigationController {
+        else if let _ = navigationController {
             navigationController?.popViewController(animated: true)
         }
         else {
