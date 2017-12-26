@@ -112,16 +112,27 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="New Meal" id="4RM-WR-WX2">
-                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="bvw-4A-UC3"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="0TD-xh-nXF"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="bvw-4A-UC3">
+                            <connections>
+                                <action selector="cancelButtonPressed:" destination="BYZ-38-t0r" id="XJn-Cs-ri0"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="0TD-xh-nXF">
+                            <connections>
+                                <segue destination="qa4-m1-sTa" kind="unwind" unwindAction="unwindToMealListWithSegue:" id="3L2-m6-pfi"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="cancelButton" destination="bvw-4A-UC3" id="IlH-k2-Kkr"/>
                         <outlet property="nameTextField" destination="i3T-WW-UMz" id="bQP-mF-oxs"/>
                         <outlet property="photoImageView" destination="0cX-YV-KoO" id="UpX-Vu-QiB"/>
                         <outlet property="ratingControl" destination="VFj-87-xdk" id="dk1-g3-3uv"/>
+                        <outlet property="saveButton" destination="0TD-xh-nXF" id="jf2-fO-CXt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="qa4-m1-sTa" userLabel="Exit" sceneMemberID="exit"/>
                 <tapGestureRecognizer id="5WH-Jg-kvt">
                     <connections>
                         <action selector="selectImageFromPhotoLibrary:" destination="BYZ-38-t0r" id="NZI-HA-kpe"/>

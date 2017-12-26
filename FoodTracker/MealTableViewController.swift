@@ -18,7 +18,9 @@ class MealTableViewController: UITableViewController {
         // Load the sample data
         loadSampleMeals()
     }
-
+    
+    // MARK: Private Methods
+    
     private func loadSampleMeals() {
         
         guard let meal1 = Meal.init(name: "Caprese Salad", photo: UIImage(named: "meal1"), rating: 4) else {
@@ -34,6 +36,22 @@ class MealTableViewController: UITableViewController {
         }
         
         meals += [meal1, meal2, meal3]
+    }
+    
+    
+    // MARK: Action
+    
+    @IBAction func unwindToMealList(segue: UIStoryboardSegue) {
+        
+        if let sourceViewController = segue.source as? MealViewController, let meal = sourceViewController.meal {
+            
+            // Add a new meal
+            let newIndexPath = IndexPath(row: meals.count, section: 0)
+            
+            meals.append(meal)
+            
+            tableView.insertRows(at: [newIndexPath], with: .automatic)
+        }
     }
     
     
