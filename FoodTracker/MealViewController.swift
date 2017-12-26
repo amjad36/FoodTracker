@@ -28,6 +28,15 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         
         nameTextField.delegate = self
         
+        // Set up views if editing an existing meal
+        if let meal = meal {
+            navigationItem.title = meal.name
+            nameTextField.text = meal.name
+            photoImageView.image = meal.photo
+            ratingControl.rating = meal.rating
+        }
+        
+        // Enable the Save button only if the text field has a valid Meal name.
         updateSaveButtonState()
     }
     
@@ -83,7 +92,16 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
     }
     
     @IBAction func cancelButtonPressed(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        
+        if self.isBeingPresented {
+            self.dismiss(animated: true, completion: nil)
+        }
+        else if _ = navigationController {
+            navigationController?.popViewController(animated: true)
+        }
+        else {
+            fatalError("The MealViewController is not inside a navigation controller")
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
