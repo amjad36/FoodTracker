@@ -93,11 +93,11 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
     
     @IBAction func cancelButtonPressed(_ sender: Any) {
         
-        if self.isBeingPresented {
+        if presentingViewController != nil {
             self.dismiss(animated: true, completion: nil)
         }
-        else if let _ = navigationController {
-            navigationController?.popViewController(animated: true)
+        else if let owningNavigationController = navigationController {
+            owningNavigationController.popViewController(animated: true)
         }
         else {
             fatalError("The MealViewController is not inside a navigation controller")
